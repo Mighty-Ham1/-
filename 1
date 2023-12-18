@@ -1,1 +1,49 @@
-Начало
+Добавь к этому коду окошко для того, чтобы вставить туда информацию, раскрась фон приложения в бежевый цвет и объясни как в окошко добавить эту фотографию
+
+Для добавления окошка, в котором можно вставить информацию и фотографию, а также изменения цвета фона на бежевый, можно внести следующие изменения в код, используя библиотеку Tkinter в Python:
+
+```python
+import tkinter as tk
+from tkinter import filedialog  # Импорт модуля для работы с файловым диалогом
+from PIL import Image, ImageTk  # Импорт модулей для работы с изображениями
+
+def show_text():
+    label = tk.Label(root, text="Линия мажино", bg="beige")  # Установка цвета фона надписи
+    label.pack(pady=20)
+
+def open_image():
+    file_path = filedialog.askopenfilename()  # Открытие диалогового окна для выбора файла
+    image = Image.open(file_path)  # Открытие изображения
+    photo = ImageTk.PhotoImage(image)  # Создание объекта фотографии
+    img_label = tk.Label(root, image=photo)  # Создание виджета для отображения изображения
+    img_label.image = photo  # Сохранение ссылки на изображение
+    img_label.pack(pady=20)
+
+root = tk.Tk()
+root.title("Надпись и фотография")
+
+# Создание окошка для вставки информации
+info_entry = tk.Entry(root, width=50)
+info_entry.pack(pady=10)
+
+# Создание кнопки для отображения надписи
+text_button = tk.Button(root, text="Показать надпись", command=show_text)
+text_button.pack(pady=10)
+
+# Создание кнопки для выбора и отображения изображения
+image_button = tk.Button(root, text="Выбрать изображение", command=open_image)
+image_button.pack(pady=10)
+
+# Изменение цвета фона на бежевый
+root.configure(bg='beige')
+
+root.mainloop()
+```
+
+В этом обновленном коде добавлено окошко для вставки информации (Entry), кнопка для отображения надписи, кнопка для выбора изображения, а также изменение цвета фона на бежевый. При выборе изображения через кнопку "Выбрать изображение" будет отображено выбранное изображение.
+
+Для работы с изображениями в этом примере используются модули filedialog для открытия файла и Image / ImageTk из библиотеки PIL (Python Imaging Library) для отображения изображения в окне приложения.
+
+Пожалуйста, обратите внимание, что для запуска этого кода вам потребуется установленные библиотеки Tkinter и Pillow.
+
+By Perplexity at https://www.perplexity.ai/search/125062f5-5eaf-49fb-acde-b894d322775c?s=m
