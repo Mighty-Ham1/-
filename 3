@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "C:\Users\Igor\PycharmProjects\Задачи\Progect\test.py", line 3, in <module>
+    from PIL import Image, ImageTk  # Импорт модулей для работы с изображениями
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'PIL'
+
+Ошибка "ModuleNotFoundError: No module named 'PIL'" возникает, когда Python не может найти модуль PIL (Python Imaging Library), который используется в коде. Чтобы решить эту проблему, необходимо установить модуль PIL. Вы можете установить его, используя pip, командой "pip install pillow" в командной строке.
+
+Вот пример кода, который использует модуль PIL для отображения изображения в окне приложения:
+
+```python
+import tkinter as tk
+from tkinter import filedialog
+from PIL import Image, ImageTk
+
+def open_image():
+    file_path = filedialog.askopenfilename()
+    image = Image.open(file_path)
+    photo = ImageTk.PhotoImage(image)
+    img_label = tk.Label(root, image=photo)
+    img_label.image = photo
+    img_label.pack(pady=20)
+
+root = tk.Tk()
+root.title("Отображение изображения")
+
+image_button = tk.Button(root, text="Выбрать изображение", command=open_image)
+image_button.pack(pady=10)
+
+root.mainloop()
+```
+
+В этом примере при нажатии на кнопку "Выбрать изображение" открывается диалоговое окно для выбора файла изображения. После выбора файла изображения, оно отображается в окне приложения.
+
+Пожалуйста, обратите внимание, что для запуска этого кода вам потребуется установленные библиотеки Tkinter и Pillow. Если вы уже установили библиотеку Pillow, но ошибка все еще возникает, убедитесь, что вы используете правильное имя модуля при импорте. Вместо "from PIL import Image, ImageTk" вы можете использовать "from PIL import Image as Img, ImageTk as ImgTk", чтобы избежать конфликта имен.
+
+Citations:
+[1] Module Not Found - No module named https://stackoverflow.com/questions/37233140/module-not-found-no-module-named
+[2] ModuleNotFoundError: no module named Python Error [Fixed] https://www.freecodecamp.org/news/module-not-found-error-in-python-solved/
+[3] python локальный путь к файлу - Дзен https://dzen.ru/list/gadgets/python-lokalnyi-put-k-failu
+[4] Getting "ModuleNotFoundError" even though it just got installed by pip https://speckle.community/t/getting-modulenotfounderror-even-though-it-just-got-installed-by-pip/3962
+[5] import os python os system | Дзен https://dzen.ru/list/gadgets/import-os-python-os-system
+
+By Perplexity at https://www.perplexity.ai/search/d08df09d-32f2-4802-8e92-350fc05bac02?s=m
