@@ -1,0 +1,35 @@
+Напиши код для такого проекта
+
+To create a Python application with a GUI, database integration, and the ability to display images and text, you can use the following code as a starting point. This code uses the Tkinter library for the GUI and SQLite for the database. It provides a simple interface with a button to show more details, and it can be further expanded to include image display and database integration.
+
+```python
+import tkinter as tk
+from tkinter import messagebox
+
+def show_details():
+    # Retrieve and display more details from the database
+    pass  # Add your code to retrieve and display details
+
+# Create the main window
+root = tk.Tk()
+root.title("Image and Text Viewer")
+
+# Add a button to show more details
+button = tk.Button(root, text="Узнать подробнее", command=show_details)
+button.pack(pady=20)
+
+# Run the application
+root.mainloop()
+```
+
+This code sets up a simple GUI with a button that, when clicked, will trigger the `show_details` function. Inside the `show_details` function, you can add the code to retrieve and display the relevant details from the database. For integrating the database and displaying images, you would need to add additional code using the SQLite library for database operations and a suitable library for displaying images, such as Pillow.
+
+For creating the executable, you can use a library like pyinstaller, which allows you to convert your Python application into an executable file for Windows. This will enable you to create a standalone application that can be run on a Windows system without requiring the user to have Python installed.
+
+If you need further assistance with database integration, image display, or creating the executable, feel free to ask for more specific guidance.
+
+Citations:
+[1] Python Examples https://www.programiz.com/python-programming/examples
+[2] I would like to create a windows "app" or executable. https://www.reddit.com/r/learnpython/comments/to7z1q/i_would_like_to_create_a_windows_app_or_executable/?rdt=36720
+
+By Perplexity at https://www.perplexity.ai/search/a4f2a36a-4e96-4590-a41e-d487b16de9ba?s=m
