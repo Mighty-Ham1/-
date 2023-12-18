@@ -1,0 +1,32 @@
+Сделать так, чтобы после нажатия кнопки появлялась надпись "Линия мажино"
+
+Для того, чтобы при нажатии кнопки появилась надпись "Линия мажино", можно использовать библиотеку Tkinter в Python. Вот пример кода, который создает окно с кнопкой, и при нажатии на кнопку появляется надпись:
+
+```python
+import tkinter as tk
+
+def show_text():
+    label = tk.Label(root, text="Линия мажино")
+    label.pack(pady=20)
+
+root = tk.Tk()
+root.title("Надпись по нажатию кнопки")
+
+button = tk.Button(root, text="Показать надпись", command=show_text)
+button.pack(pady=20)
+
+root.mainloop()
+```
+
+В этом примере при нажатии на кнопку появляется надпись "Линия мажино". Вы можете настроить текст и расположение надписи в соответствии с вашими потребностями.
+
+Этот код использует библиотеку Tkinter, которая является стандартным инструментом для создания графического интерфейса в Python. Она позволяет легко создавать различные виджеты, такие как кнопки, окна и другие элементы интерфейса.
+
+Citations:
+[1] [PDF] среднего общего образования - РЭУ Плеханова https://www.rea.ru/ru/org/colleges/economicheskiy_licey/Documents/%D0%9E%D0%9E%D0%9F%20%D0%A1%D0%9E%D0%9E.pdf
+[2] python локальный путь к файлу - Дзен https://dzen.ru/list/gadgets/python-lokalnyi-put-k-failu
+[3] Кэрол II Румынии - hmong.ru https://hmong.ru/wiki/King_Carol_II
+[4] import os python os system | Дзен https://dzen.ru/list/gadgets/import-os-python-os-system
+[5] Python GUI Programming With Tkinter – Real Python https://realpython.com/python-gui-tkinter/
+
+By Perplexity at https://www.perplexity.ai/search/20f0e6db-77e4-4297-8d29-a78e7f781210?s=m
